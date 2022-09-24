@@ -1,0 +1,79 @@
+{
+    "producto": {
+        "nombre": {
+            "type": "string",
+            "required": true,
+            "minLenght": 1,
+            "maxLenght": 100
+        },
+        "precio": {
+            "type": "number",
+            "required": true
+        },
+        "cantidad": {
+            "type": "number",
+            "required": true
+        },
+        "descripcion": {
+            "type": "string",
+            "required": true
+        },
+        "categoria": {
+            "type": "Schema.ObjectId",
+            "ref": "categoria",
+            "required": true
+        }
+    },
+    "categoria": {
+        "nombre": {
+            "type": "string",
+            "required": true
+        }
+    },
+    "usuario": {
+        "nombre": {
+            "type": "string",
+            "required": true
+        },
+        "apellido": {
+            "type": "string",
+            "required": true
+        },
+        "email": {
+            "type": "string",
+            "required": true
+        },
+        "password": {
+            "type": "string",
+            "required": true
+        },
+        "rol": {
+            "type": "string",
+            "required": true,
+            "enum": [
+                "admin",
+                "user"
+            ],
+            "default": "user"
+        },
+        "carrito": {
+            "type": "Schema.ObjectId",
+            "ref": "carrito"
+        }
+    },
+    "carrito": {
+        "productos": {
+            "type": [
+                "Schema.ObjectId"
+            ],
+            "ref": "producto"
+        }
+    },
+    "estado": {
+        "disponible": {
+            "type": "boolean",
+            "default": true,
+            "required": true
+        }
+    }
+}
