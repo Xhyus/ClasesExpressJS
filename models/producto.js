@@ -22,6 +22,10 @@ const productoSchema = new Schema({
     categoria: {
        type: Schema.ObjectId,
         ref: "categoria",
+    },
+    estado: {
+        type: Schema.ObjectId,
+        ref: "estado"
     }
 })
 

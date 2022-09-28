@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const categoriaSchema = new Schema({
     nombre:{
-        type: "string",
+        type: String,
         require: true
     }
 })
