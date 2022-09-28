@@ -3,10 +3,15 @@ const mongoose = require('mongoose')
 const cors = require('cors');
 require('dotenv').config();
 
+const productoRoutes = require('./routes/productoRoutes');
+const categoriaRoutes = require('./routes/categoriaRoutes');
+
 const app = express()
 app.use(cors())
 app.use(express.json())
 app.options('*', cors())
+app.use('/api', categoriaRoutes)
+app.use('/api', productoRoutes)
 
 const options = {
     useNewUrlParser: true,

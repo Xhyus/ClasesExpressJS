@@ -22,6 +22,10 @@
             "type": "Schema.ObjectId",
             "ref": "categoria",
             "required": true
+        },
+        "estado":{
+            "type": "Schema.ObjectId",
+            "ref": "estado"
         }
     },
     "categoria": {
