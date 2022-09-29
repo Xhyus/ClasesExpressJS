@@ -6,6 +6,7 @@ require('dotenv').config();
 const productoRoutes = require('./routes/productoRoutes');
 const categoriaRoutes = require('./routes/categoriaRoutes');
 const estadoRoutes = require('./routes/estadoRoutes');
+const carritoRoutes = require('./routes/carritoRoutes');
 
 const app = express()
 app.use(cors())
@@ -14,6 +15,7 @@ app.options('*', cors())
 app.use('/api', estadoRoutes)
 app.use('/api', categoriaRoutes)
 app.use('/api', productoRoutes)
+app.use('/api', carritoRoutes)
 
 const options = {
     useNewUrlParser: true,
