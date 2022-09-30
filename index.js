@@ -7,11 +7,13 @@ const productoRoutes = require('./routes/productoRoutes');
 const categoriaRoutes = require('./routes/categoriaRoutes');
 const estadoRoutes = require('./routes/estadoRoutes');
 const carritoRoutes = require('./routes/carritoRoutes');
+const usuarioRoutes = require('./routes/usuarioRoutes');
 
 const app = express()
 app.use(cors())
 app.use(express.json())
 app.options('*', cors())
+app.use('/api', usuarioRoutes)
 app.use('/api', estadoRoutes)
 app.use('/api', categoriaRoutes)
 app.use('/api', productoRoutes)
